@@ -1,4 +1,6 @@
-﻿namespace DemoLibrary
+﻿using DemoLibrary.Accounts;
+
+namespace DemoLibrary.Applicants
 {
     public interface IApplicantModel
     {

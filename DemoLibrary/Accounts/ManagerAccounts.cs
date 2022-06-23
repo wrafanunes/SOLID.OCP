@@ -1,10 +1,11 @@
-﻿using System;
+﻿using DemoLibrary.Applicants;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DemoLibrary
+namespace DemoLibrary.Accounts
 {
     public class ManagerAccounts : IAccounts
     {

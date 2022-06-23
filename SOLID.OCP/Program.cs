@@ -1,8 +1,9 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using DemoLibrary;
+using DemoLibrary.Applicants;
 /*Agora em vez de existir uma lista de PersonModel, existe uma lista de IApplicantModel, onde é possível inserir
- qualquer tipo de model que implemente a interface IApplicantModel*/
+qualquer tipo de model que implemente a interface IApplicantModel*/
 List<IApplicantModel> people = new()
 {
     new PersonModel{ FirstName = "Wilson", LastName = "Nunes"},
