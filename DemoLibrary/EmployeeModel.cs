@@ -18,5 +18,6 @@ namespace DemoLibrary
         public string LastName { get; set; }
         public string EmailAddress { get; set; }
         public bool IsManager { get; set; }
+        public bool IsExecutive { get; set; }
     }
 }
