@@ -1,20 +1,19 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using DemoLibrary;
-/*Muitas mudanças foram feitas em um sistema que já estava funcionando, as classes Program, Accounts, EmployeeModel
- * e PersonModel foram modificadas, isso viola o OCP e coloca a aplicação em risco de apresentar bugs*/
-List<PersonModel> people = new()
+/*Agora em vez de existir uma lista de PersonModel, existe uma lista de IApplicantModel, onde é possível inserir
+ qualquer tipo de model que implemente a interface IApplicantModel*/
+List<IApplicantModel> people = new()
 {
     new PersonModel{ FirstName = "Wilson", LastName = "Nunes"},
-    new PersonModel{ FirstName = "Luis", LastName = "Silva", TypeOfEmployee = EmployeeType.Manager},
-    new PersonModel{ FirstName = "Natan", LastName = "Aparecido", TypeOfEmployee = EmployeeType.Executive}
+    new ManagerModel{ FirstName = "Luis", LastName = "Silva"},
+    new ExecutiveModel{ FirstName = "Natan", LastName = "Aparecido"}
 };
 
 List<EmployeeModel> employees = new();
-Accounts accountsProcessor = new();
 foreach (var person in people)
 {
-    employees.Add(accountsProcessor.Create(person));
+    employees.Add(person.AccountProcessor.Create(person));
 }
 foreach (var employee in employees)
 {

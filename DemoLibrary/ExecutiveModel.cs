@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace DemoLibrary
 {
-    public class EmployeeModel
+    public class ExecutiveModel : IApplicantModel
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string EmailAddress { get; set; }
-        public bool IsManager { get; set; }
-        public bool IsExecutive { get; set; }
+        public IAccounts AccountProcessor { get; set; } = new ExecutiveAccounts();
     }
 }
