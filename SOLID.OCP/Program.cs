@@ -11,13 +11,14 @@ List<PersonModel> people = new()
 
 List<EmployeeModel> employees = new();
 Accounts accountsProcessor = new();
-foreach(var person in people)
+foreach (var person in people)
 {
     employees.Add(accountsProcessor.Create(person));
 }
-foreach(var employee in employees)
+foreach (var employee in employees)
 {
-    Console.WriteLine($"{employee.FirstName} {employee.LastName}: {employee.EmailAddress}");
+    Console.WriteLine($"{employee.FirstName} {employee.LastName}: {employee.EmailAddress} " +
+        $"IsManager: {employee.IsManager}");
 }
 
 Console.ReadLine();
